@@ -1,0 +1,107 @@
+
+@media (max-width:1920px){
+	.rostelekom {
+		padding-right: 0px;
+		position: absolute;
+	}
+}
+
+@media (max-width: 1300px) {
+	.container {
+		width: 1200px;
+	}
+	.section-about__image {
+		text-align: right;
+		margin-right: 120px;
+		margin-top: -100px;
+}	
+	.description-ada {
+		bottom: 0;
+	}
+	.section-social__image {
+		bottom: 0;		
+	}
+	.rostelekom {
+		position: absolute;
+		margin-right: -40px;
+	}
+	.section-social__image {
+		margin-left: 280px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+@media (max-width: 1200px) {
+	.screen{
+		flex-basis: 100vh;
+	}
+	.wrapper {
+		max-width: 1280px;
+	}
+	.hero {
+    	width: 1200px;
+	}
+	.section-history__image {
+		margin-left: 50px;
+	}
+	.section-about__image {
+		text-align: right;
+		margin-right: -105px;
+		margin-top: -100px;
+	}
+	.rostelekom {
+		padding-left: 100px;
+		position: absolute;
+	}
+	.section-about__title {
+		margin-left: 160px;
+	}
+	.section-social__image {
+		margin-left: 300px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	.goals {
+		margin-left: 12px;
+	}
+	.section-about__title {
+		margin-left: 30px;
+	}
+
+} 
+
+@media (max-height:480px){
+	section{
+		min-height:200vh;
+	}
+	.hero_adaptive{
+		width: 700px;
+	}
+	.hero-description{
+		font-size: 25px;
+		font-weight: 500;
+	}
+	.hero{
+		height: 100%;
+	}
+
+	.description_adaptive{
+		height:600px;
+	}
+	.description-ada{
+		margin-bottom: 500px;
+		height:300px;
+		width:225px;
+	}
+}
+@media (max-height:380px){
+	.description-ada{
+		height:250px;
+	}
+}
+
+
+

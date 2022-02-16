@@ -1,0 +1,827 @@
+
+
+/* ------------------------------------------------- */
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 1170px;
+}
+/*--------------------*/
+
+
+@font-face {
+	font-family: 'Cyberdyne Super-Italic';
+	src: url('../fonts/cyberdynesuperital.eot');
+	src: local('☺'), url('fonts/cyberdynesuperital.woff') format('woff'), url('fonts/cyberdynesuperital.ttf') format('truetype'), url('fonts/cyberdynesuperital.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*--------------------*/
+
+.wrapper{
+    min-height: 100%;
+}
+
+.page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.page_wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+
+.screen{
+    flex: 1 0 100%;
+    position: relative;
+	background-attachment: fixed;
+}
+
+.screen_content{
+    padding:  100px 25px 25px 25px;
+    position: relative;
+    z-index: 3;
+}
+
+.screen_title{
+    color: white;
+    font-size: 50px;
+    margin: 0 0 30px 0;
+    display: inline-block;
+}
+
+.screen_title_bg{
+    background-color: rgba(0,0,0, 0.5);
+    padding: 15px;
+}
+
+.screen_body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden; /* для того, чтобы изображение не выходило за границы экрана */
+}
+
+.screen_image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.screen_image img {
+    object-fit: cover; /* он позволит вписывать изображения, добавленные с помощью тега img в размеры объекта */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.screen_text{
+    font-size: 20px;
+    line-height:  130%;
+    color: #fff;
+}
+
+.screen_text p{
+    margin:  0px 0px 20px 0px;
+}
+
+.screen_text p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .screen_title {
+        font-size: 40px;
+        color: red;
+    }
+    .screen_text {
+        font-size: 16px;
+        color: red;
+    }
+}
+
+
+.page_pagination{
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translate(0px, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.page_bullet{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background-color: rgba(0,0,0, 0.5);
+    margin: 10px 0;
+	border: #fff solid 1px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease 0s;
+}
+
+.page_bullet_active{
+    background-color: white;
+}
+
+.page_scroll{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.5);
+
+}
+
+.page_drag-scroll{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.8);
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+span {
+	font-family: 'Dela Gothic One', cursive;
+	font-weight: 500;	
+}
+
+
+/* Первая страница */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("img/background.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position:relative;
+}
+
+.hero-text {
+	text-align: center;
+	position:relative;
+	padding-bottom:50px;
+}
+
+.a-hero-title {
+	font-family: 'Cyberdyne Super-Italic';
+	font-size: 150px;
+	color: #fff;
+	padding-left: 85px;
+}
+
+.hero-description {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 35px;
+	text-transform: uppercase;
+	color: #fff;
+	margin-top: 30px;
+}
+
+.running-line {
+	position: absolute;
+	bottom: 0;
+
+}
+
+
+/* Вторая страница */
+
+.description {
+	padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("./img/background-description1.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position:relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    position:absolute;
+}
+
+.description-text {
+	text-align: left;
+	position:relative;
+	padding-bottom: 50px;
+}
+
+.description-text__title {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 36px;
+	color: #fff;
+	padding-left: 85px;
+}
+
+.description-text__subtitle {
+	margin-top: 18px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #fff;
+	padding-left: 85px;
+	font-weight: 100;
+	line-height: 1.5;
+}
+
+.description-button {
+	font-family: 'Montserrat', sans-serif;
+    background-color: #5249F8;
+    font-weight: 400;
+    border: none;
+    padding: 25px 42px;
+    text-align: right;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 85px;
+    margin-top: 20px;
+
+	transition: 0.3s;
+} 
+
+.description-button__click {
+	color: #fff;
+}
+
+
+.description-button:hover {
+	background-color: #612EB2;
+	transition: 0.3s;
+}
+
+.description-ada {
+	position: absolute;
+	margin-left: 980px;
+	margin-top: -250px;
+}
+
+/* Третья страница */
+
+.section-goals {
+	padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("../img/background-goals.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position:relative;
+}
+
+.section-goals__title {
+	font-size: 36px;
+	color: #fff;
+	padding-bottom: 65px;
+	text-align: center;
+	position:relative;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+.goals {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.goals-col {
+	flex: 0 0 25%;
+}
+
+.goal {
+	padding-top: 50px;
+	width: 280px;
+	height: 360px;
+	background-color: #6035A4;
+	text-align: center;
+	font-weight: 800;	
+}
+
+.goal p {
+	margin-top: 15px;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	font-weight: 200;
+	line-height: 1.3;
+}
+
+.goal h4 {
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+
+/* Четвёртая страница */
+
+.section-history {
+	padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("./img/background-description1.jpg") center repeat-y;
+    -webkit-background-size: cover;
+
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-attachment: fixed; */
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.section-history__image {
+	position: absolute;
+	padding-top: 80px;
+	text-align: left;
+	margin-top: -250px;
+}
+
+.section-history__subtitle {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	color: #fff;
+	text-align: left; 
+	position: absolute;
+	margin-left: 550px;
+	margin-top: -180px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+.section-history__subtitle__league {
+	font-weight: 700;
+	color: #fff;
+}
+
+.section-history__subtitle__league:hover {
+	font-weight: 700;
+	color: yellow;
+}
+
+.history {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+	font-size: 36px;
+}
+
+/* Пятая страница */
+
+.section-about {
+	padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("./img/background-description1.jpg") center no-repeat;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-attachment: fixed; */
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.section-about__image {
+	text-align: right;
+	margin-right: 215px;
+	margin-top: -100px;
+}
+
+.section-about__title {
+	position: absolute;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	color: #fff;
+	font-weight: 200;
+	line-height: 1.5;
+	margin-top: -50px;
+}
+
+.section-about__title span {
+	font-weight: 500;
+}
+
+/* Шестая страница */
+
+.section-contacts {
+	padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh; 
+
+    background: center no-repeat;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-attachment: fixed; */
+    -webkit-background-size: cover;
+    background-size: cover;
+    position:relative;
+}
+
+.section-contacts__title {
+	font-family: 'Montserrat', sans-serif;
+	color: #000;
+	font-size: 36px;
+	position: absolute;
+	font-weight: 700;
+	margin-top: 155px;
+	margin-left: 423px;
+}
+
+.section-contacts__partners{
+	margin-left: -72px;
+	margin-right: -50px;
+	width: 100%;
+	background-color: #fff;
+	top: 0; 
+	position: absolute;
+}
+
+.contact {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.contact-col {
+	flex: 0 0 25%;
+	display: inline-block;
+	justify-content: center;
+	margin-left: 40px;
+}
+
+.a_pguti {
+	margin-left: 250px;
+	margin-top: 250px;
+}
+
+.a_it_club {
+	position: absolute;
+	margin-left: 280px;
+	margin-top: -90px;
+}
+
+.a_pizza {
+	position: absolute;
+	margin-left: 850px;
+	margin-top: -90px
+}
+
+.contact {
+	margin-top: 50px;
+}
+
+.rostelekom {
+	margin-right: 210px;
+}
+
+/* Седьмая страница */
+
+.section-social .container {
+	width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+} 
+
+.section-social {
+	padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background: url("./img/background-description1.jpg") center no-repeat;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-attachment: fixed; */
+    -webkit-background-size: cover;
+    background-size: cover;
+    position:relative;
+}
+
+.section-social__text__title {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+	font-size: 36px;
+	color: #fff;
+	text-align: center;	
+	margin-top: -100px;
+}
+
+.section-social__text_subtitle {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	color: #C3B8B8;
+	margin-top: 25px;
+}
+
+.section-social__icons{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;	
+	justify-content: space-between;
+}
+
+.section-social__col {
+	flex: 0 0 20%;
+}
+
+.vkontakte {
+	margin-left: 5px;
+}
+
+.youtube {
+	margin-left: 20px;
+}
+
+.twitch {
+	margin-left: 35px;
+}
+
+.instagram {
+	margin-left: 15px;
+}
+
+.section-social__image {
+	position: absolute;
+	margin-left: 510px;
+	margin-top: -250px;
+}
+
+/* Восьмая страница */
+
+.section-welcome__ada {
+	background-color: #000;
+	padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    /* background-attachment: fixed; */
+    -webkit-background-size: cover;
+    background-size: cover;
+    position:relative;
+}
+
+.section-welcome__ada__title {
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 36px;
+	font-weight: 300;
+	padding-bottom: 50px;
+	text-align: left;
+	margin-left: 50px;
+}
+
+.section-welcome__ada__video {
+	text-align: left;
+	margin-left: 50px;
+}
+
+.section-welcome__ada__subtitle {
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	text-align: left;
+	margin-left: 425px;
+	font-size: 18px;
+	position: absolute;
+	margin-top: -300px;
+	line-height: 1.6;
+}
+
+.span_ada {
+	color: #EED6C9;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 800;
+}
+
+bold {
+	font-weight: 600;
+}
+
+.kate_yellow {
+	font-weight: 700;
+	color: #fff;
+}
+
+
+.photo-test {
+	position: absolute;
+	margin-left: 890px;
+	margin-top: -175px;
+}
+
+footer {
+	width: 100%;
+	height: 120px;
+	background-color: #0C0A0D;
+	text-align: center;
+}
+
+.footer_logo {
+	padding-top: 30px;
+	margin-left: 20px;
+}
+
+.footer_copyright {
+	color: #fff;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 20px;
+	font-weight: 300;
+}
+
+.kate_yellow:hover {
+	color: yellow;
+}
+
+@media (min-width: 1919px) {
+
+.section-social__image {
+margin-left: 280px;
+position: absolute;
+right: 0;
+bottom: 0;
+}
+
+.description-text__title {
+font-size: 62px;
+}
+
+.description-text__subtitle {
+font-size: 26px;
+}
+
+.description-button {
+padding: 45px 62px;
+font-size: 25px;
+}
+
+.description-ada {
+right: 0;
+bottom: 0;
+}
+
+.section-goals__title {
+font-size: 62px;
+}
+
+.goal h4 {
+font-size: 24px;
+}
+.goal p {
+font-size: 22px;
+}
+.history {
+font-size: 62px;
+}
+.section-history__subtitle{
+font-size: 25px;
+}
+.section-about__title {
+	font-size: 36px;
+}
+.section-contacts__title{
+font-size: 62px;
+margin-left: 250px;
+}
+.contact {
+margin-left: 10px;
+}
+.rostelekom{
+margin-left: -350px;
+}
+.section-contacts__title {
+margin-top: 280px;
+}
+.contact-col {
+margin-top: 160px;
+}
+.section-social__text__title {
+font-size: 54px;
+}
+.section-social__text_subtitle {
+font-size: 28px;
+}
+.section-welcome__ada__title {
+font-size: 64px;
+}
+.section-welcome__ada__subtitle {
+font-size: 27px;
+}
+.photo-test {
+margin-top: 1px;
+}
+.section-history__subtitle {
+font-size: 36px;
+}
+}
+
+
+
+
+
+
+    

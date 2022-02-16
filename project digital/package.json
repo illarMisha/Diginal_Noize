@@ -1,0 +1,7 @@
+{
+  "name": "str2",
+  "version": "1.0.0",
+  "dependencies": {
+    "swiper": "^7.0.6"
+  }
+}
